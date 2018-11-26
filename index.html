@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>はじめてのjQuery</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    $("div:contains('jQuery')").css("text-decoration", "underline");
+    $("#toggle").on("click", function(){
+    $("#target").fadeToggle("slow");
+
+  });
+});
+  $(document).ready(function(){
+    
+    $("li").hover(
+      function () {
+        $(this).append($("<span> !!!</span>"));
+      }, 
+      function () {
+        $(this).find("span:last").remove();
+      }
+    );
+
+  });
+  </script>
+</head>
+<body>
+  <div>はじめてのjQuery</div>
+  <div>はじめての</div>
+  <div>jQuery</div>
+
+  <div id="target">表示・非表示される要素</div>
+  <button id="toggle">切り替え</button>
+
+  <ul>
+    <li>こんにちは</li>
+    <li>こんばんは</li>
+    <li>ありがとう</li>
+    <li>さようなら</li>
+  </ul>
+</body>
+</html>
